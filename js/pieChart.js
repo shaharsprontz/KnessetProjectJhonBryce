@@ -12,10 +12,11 @@ $.ajax({
 });
     function drawChart(dataParty) {
         var parties = [];
-        parties[0] = ['parties', 'number_of_seats'];
-        for (var i = 1; i < dataParty.length; i++) {
+
+        for (var i = 0; i < dataParty.length; i++) {
             parties[i] = [dataParty[i].name, dataParty[i].number_of_seats];
         }
+        parties.unshift(['parties', 'number_of_seats']);
         var data = google.visualization.arrayToDataTable(parties);
         var options = {
             title: 'מפלגות הכנסת',

@@ -129,13 +129,18 @@ nav ul li a:active, nav ul li a.current {
 
 }
 
+.mks {
+    padding-right: 10px;
+    margin-top: 30px;
+}
+
 .mks li {
     list-style-type: none;
     display: block;
     width: 150px;
     height: 20px;
     margin: 4px;
-    background-color: #96d1f8;
+    background: linear-gradient(#96d1f8, #639fff);
     border-radius: 5px;
     text-align: center;
     line-height: 20px;
@@ -146,8 +151,11 @@ nav ul li a:active, nav ul li a.current {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
-footer {
-    color: #999;
-    margin: 0 auto;
-    width: 500px;
+#mkData {
+    border: 1px solid black;
+    margin-right: 400px;
+    height: 400px;
+    width: 800px;
+    margin-top: -550px;
+    position: absolute;
 }

@@ -23,7 +23,21 @@ $(document).ready(function () {
                 method: "GET",
                 url: "http://oknesset.org/api/v2/member/" + mkIds,
                 success: function (data) {
-                    console.log(data);
+
+                    var role = data.current_role_descriptions;
+                    var birth = data.date_of_birth;
+                    var party = data.party_name;
+                    var start = data.start_date;
+                    var email = data.email;
+                    var img = data.img_url;
+
+                    $("#mkData").append($("<div>").attr('id', 'role').append(role))
+                        .append($("<div>").attr('id', 'birth').append(birth))
+                        .append($("<div>").attr('id', 'party').append(party))
+                        .append($("<div>").attr('id', 'start').append(start))
+                        .append($("<div>").attr('id', 'email').append(email))
+                        .append($("<div>").attr('id', 'img').append(img));
+
                 }
             });
         });
