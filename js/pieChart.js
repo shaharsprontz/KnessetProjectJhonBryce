@@ -19,15 +19,15 @@ $.ajax({
         parties.unshift(['parties', 'number_of_seats']);
         var data = google.visualization.arrayToDataTable(parties);
         var options = {
-            title: 'מפלגות הכנסת',
-                width: '100%',
-                height: '100%',
+            colors: ['#CB4335', '#D7BDE2', '#7D3C98', '#2980B9', '#F9E79F', '#FAD7A0', '#F5CBA7', '#229954', '#85929E', '#34495E'],
+            width: '100%',
+            height: '100%',
             chartArea : {
                 height: '100%',
                 width: '100%',
-                left: 50
+                
             },
-            backgroundColor: '#eee'
+            backgroundColor: '#fff'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
