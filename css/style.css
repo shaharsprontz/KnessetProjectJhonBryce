@@ -173,8 +173,14 @@ nav ul li a:active, nav ul li a.current {
     font-size: 16px;
 }
 
-img {
+#mkData img {
     margin-bottom: 20px;
+}
+
+.stars {
+    margin-left: 10px;
+    z-index: -1;
+    position: relative;
 }
 
 #mkName {
