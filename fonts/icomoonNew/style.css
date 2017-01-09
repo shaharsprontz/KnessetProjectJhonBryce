@@ -1,15 +1,15 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('./fonts/icomoon.svg');
-  src:  url('./fonts/icomoon.eot?whj7rt#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?whj7rt') format('truetype'),
-    url('fonts/icomoon.woff?whj7rt') format('woff'),
-    url('./fonts/icomoon.svg?whj7rt#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?8mkqqy');
+  src:  url('../fonts/icomoon.eot?8mkqqy#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?8mkqqy') format('truetype'),
+    url('fonts/icomoon.woff?8mkqqy') format('woff'),
+    url('fonts/icomoon.svg?8mkqqy#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-[class^="icon-"], [class*="icon-"] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -26,5 +26,14 @@
 
 .icon-star-full:before {
   content: "\e9d9";
+}
+.icon-mail2:before {
+  content: "\ea84";
+}
+.icon-mail3:before {
+  content: "\ea85";
+}
+.icon-facebook2:before {
+  content: "\ea91";
 }
 
