@@ -63,6 +63,14 @@ $(document).ready(function () {
                     var start = data.start_date;
                     var email = data.email;
                     var img = data.img_url;
+                    var currentPos = data.current_position;
+                    var committees = data.committees;
+                    var facebook = data.links[1].url;
+
+                    console.log(committees);
+
+                    
+
 
                     if (data.date_of_birth == null) {
                         birth = "מידע חסר"
@@ -82,7 +90,10 @@ $(document).ready(function () {
                         .append($("<div>").attr('id', 'birth').append("תאריך לידה: " + birth))
                         .append($("<div>").attr('id', 'party').append("מפלגה: " + party))
                         .append($("<div>").attr('id', 'start').append("תחילת חברות: " + start))
-                        .append($("<div>").attr('id', 'email').append("אימייל: " + email));
+                        .append($("<div>").attr('id', 'position').append("מיקום במפלגה: " + currentPos))
+                        .append($("<div>").attr('id', 'committees').append("ועדות: " + committees))
+                        .append($("<span>").attr('href', facebook).append("פייסבוק: " + facebook))
+                        .append($("<a>").attr('href', "mailto:" + email).attr("target", "_top").append(email));
 
                 }
             });
