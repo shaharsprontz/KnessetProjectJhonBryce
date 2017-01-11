@@ -6,7 +6,6 @@ function clickHandler() {
     $(".mks li").click(function (e) {
         e.preventDefault();
         var mkIds = ($(this).attr('id'));
-        console.log(mkIds);
 
         var changeLi = 'liChange';
         ($(".mks li").removeClass(changeLi));

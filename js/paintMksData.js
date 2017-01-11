@@ -13,14 +13,21 @@ function paintMksToDom(data) {
     var currentPos = data.current_position;
     var committees = data.committees;
     var facebook = data.links;
-    var fb = facebook.title;
-    console.log(fb);
 
+    for (var i = 0; i < facebook.length; i++) {
+        if (facebook[i].url.indexOf("facebook") != -1) {
+            var fbAddress = facebook[i].url;
+        }
+    }
+
+    // for (var j = 0; j < committees.length; j++) {
+    //     var vaadot = (committees[j]);
+    // }
     var vaadot = $(committees).each(function (index, value) {
-        var vaadot = value[0];
-        console.log(vaadot);
-
+        vaadot = value[0];
     });
+    var pol = JSON.stringify(vaadot);
+    console.log(pol);
 
     if (data.date_of_birth == null) {
         birth = "מידע חסר"
@@ -39,7 +46,7 @@ function paintMksToDom(data) {
         .append($("<div>").attr('id', 'party').append("מפלגה: " + party))
         .append($("<div>").attr('id', 'start').append("תחילת חברות: " + start))
         .append($("<div>").attr('id', 'position').append("מיקום במפלגה: " + currentPos))
-        .append($("<div>").attr('id', 'committees').append("ועדות: " + vaadot))
-        .append($("<div>").attr('href', facebook).append("פייסבוק: " + facebook + "</br>"))
+        .append($("<div>").attr('id', 'committees').append("ועדות: " + pol))
+        .append($("<div>").attr('href', facebook).append("פייסבוק: " + fbAddress + "</br>"))
         .append($("<a>").attr('href', "mailto:" + email).attr("target", "_top").append(email));
 }
