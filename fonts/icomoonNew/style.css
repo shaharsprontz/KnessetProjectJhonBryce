@@ -29,11 +29,19 @@
 }
 .icon-mail2:before {
   content: "\ea84";
+  text-decoration: none;
+  color: lightgray;
+  font-size: 24px;
+
 }
 .icon-mail3:before {
   content: "\ea85";
 }
 .icon-facebook2:before {
   content: "\ea91";
+  text-decoration: none;
+  color: lightgray;
+  margin-right: 15px;
+  font-size: 24px;
 }
 

@@ -19,16 +19,8 @@ function paintMksToDom(data) {
             var fbAddress = facebook[i].url;
         }
     }
-
-    // for (var j = 0; j < committees.length; j++) {
-    //     var vaadot = (committees[j]);
-    // }
-    var vaadot = $(committees).each(function (index, value) {
-        vaadot = value[0];
-    });
-    var pol = JSON.stringify(vaadot);
-    console.log(pol);
-
+    var comitteeData = committees.map(function(arr) { return (arr[0] || " ").trim(); }).join(', ');
+    
     if (data.date_of_birth == null) {
         birth = "מידע חסר"
     }
@@ -46,7 +38,8 @@ function paintMksToDom(data) {
         .append($("<div>").attr('id', 'party').append("מפלגה: " + party))
         .append($("<div>").attr('id', 'start').append("תחילת חברות: " + start))
         .append($("<div>").attr('id', 'position').append("מיקום במפלגה: " + currentPos))
-        .append($("<div>").attr('id', 'committees').append("ועדות: " + pol))
-        .append($("<div>").attr('href', facebook).append("פייסבוק: " + fbAddress + "</br>"))
-        .append($("<a>").attr('href', "mailto:" + email).attr("target", "_top").append(email));
+        .append($("<div>").attr('id', 'committees').append("ועדות: " + comitteeData))
+        .append($("<a>").attr('href', fbAddress).attr("target", "_blank")
+        .append($('<span data-icon="&#xea91;" class="icon-facebook2">'))
+        .append($("<a>").attr('href', "mailto:" + email).attr("target", "_top").append($('<span data-icon="&#xea84;" class="icon-mail2">'))));
 }
