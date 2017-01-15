@@ -20,16 +20,8 @@ function paintMksToDom(data) {
         }
     }
     var comitteeData = committees.map(function(arr) { return (arr[0] || " ").trim(); }).join(', ');
-    
-    if (data.date_of_birth == null) {
-        birth = "מידע חסר"
-    }
-    if (data.current_role_descriptions == null) {
-        role = "מידע חסר"
-    }
-    if (data.email == null) {
-        email = "מידע חסר"
-    }
+
+    exist(data);
 
     $("#mkData").append($("<img>").attr('src', data.img_url).append(img))
         .append($("<div>").attr('id', 'mkName').append("שם: " + name))

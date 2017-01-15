@@ -30,17 +30,20 @@
 .icon-mail2:before {
   content: "\ea84";
   text-decoration: none;
-  color: lightgray;
+  color:#9da5b2;
   font-size: 24px;
-
 }
+.icon-mail2 {
+    cursor: pointer;
+}
+
 .icon-mail3:before {
   content: "\ea85";
 }
 .icon-facebook2:before {
   content: "\ea91";
   text-decoration: none;
-  color: lightgray;
+  color: #9da5b2;
   margin-right: 15px;
   font-size: 24px;
 }
