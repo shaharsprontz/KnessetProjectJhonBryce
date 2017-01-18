@@ -37,8 +37,9 @@
     cursor: pointer;
 }
 
-.icon-mail3:before {
-  content: "\ea85";
+.icon-mail3 {
+  content: "\ea91";
+  visibility: hidden;
 }
 .icon-facebook2:before {
   content: "\ea91";
@@ -47,4 +48,5 @@
   margin-right: 15px;
   font-size: 24px;
 }
+
 

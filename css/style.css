@@ -202,5 +202,8 @@ a {
     width: 450px;
 }
 
+.visibility {
+    visibility: hidden;
+}
 
 
