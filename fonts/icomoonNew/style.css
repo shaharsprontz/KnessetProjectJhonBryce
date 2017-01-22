@@ -35,6 +35,7 @@
 }
 .icon-mail2 {
     cursor: pointer;
+    /*margin-right: 20px;*/
 }
 
 .icon-mail3 {
@@ -45,8 +46,11 @@
   content: "\ea91";
   text-decoration: none;
   color: #9da5b2;
-  margin-right: 15px;
   font-size: 24px;
+  margin-right: 20px;
 }
 
+.visible {
+    visibility: hidden;
+}
 

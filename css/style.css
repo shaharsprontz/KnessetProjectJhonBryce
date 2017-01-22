@@ -189,7 +189,7 @@ nav ul li a:active, nav ul li a.current {
 }
 
 #mkName {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 a {
@@ -202,8 +202,5 @@ a {
     width: 450px;
 }
 
-.visibility {
-    visibility: hidden;
-}
 
 

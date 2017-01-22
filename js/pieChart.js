@@ -24,13 +24,19 @@ $.ajax({
             height: '100%',
             chartArea : {
                 height: '100%',
-                width: '100%',
+                width: '100%'
                 
             },
             backgroundColor: '#fff'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-        chart.draw(data, options);
+        setTimeout(function () {
+            for (var x = 0; x < parties.length; x++) {
+                chart.draw(data, options);
+            }
+        },2000);
+
+
     }
 
