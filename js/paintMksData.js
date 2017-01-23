@@ -14,12 +14,6 @@ function paintMksToDom(data) {
     var committees = data.committees;
     var facebook = data.links;
 
-    for (var j = 0; j < emailAdd.length; j++){
-        if (emailAdd == null || emailAdd == "") {
-            emailAdd.attr('class', 'visible');
-        }
-    }
-
     for (var i = 0; i < facebook.length; i++) {
         if (facebook[i].url.indexOf("facebook") != -1) {
             var fbAddress = facebook[i].url;
@@ -32,10 +26,20 @@ function paintMksToDom(data) {
         return (arr[0] || " ").trim();
     }).join(', ');
 
-    exist(data);
+    
+        if (data.img_url == null) {
+            img = ("מידע חסר");
+        }
+
+        if (data.date_of_birth == null) {
+            birth = "מידע חסר"
+        }
+        if (data.current_role_descriptions == null) {
+            role = "מידע חסר"
+        }
 
     $("#mkData").append($("<img>").attr('src', data.img_url).append(img))
-        .append($("<div>").attr('id', 'mkName').append("<span style='font-size: 20px'>שם: </span>"  + name))
+        .append($("<div>").attr('id', 'mkName').append("<span style='font-size: 20px'>שם: </span>" + name))
         .append($("<div>").attr('id', 'role').append("<span style='font-size: 20px'>תפקיד: </span>" + role))
         .append($("<div>").attr('id', 'birth').append("<span style='font-size: 20px'>תאריך לידה: </span>" + birth))
         .append($("<div>").attr('id', 'party').append("<span style='font-size: 20px'>מפלגה: </span>" + party))
@@ -47,7 +51,7 @@ function paintMksToDom(data) {
         $("#mkData").append($("<a>").attr('href', fbAddress).attr("target", "_blank")
             .append($('<span data-icon="&#xea91;" class="icon-facebook2">')))
     }
-    if (emailAdd != null || emailAdd != "") {
+    if (emailAdd != "") {
         $("#mkData").append($("<a>").attr('href', "mailto:" + emailAdd).attr("target", "_top")
             .append($('<span data-icon="&#xea84;" class="icon-mail2">')));
     }
