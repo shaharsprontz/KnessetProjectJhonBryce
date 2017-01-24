@@ -5,11 +5,17 @@
 function clickHandler() {
     $(".mks li").click(function (e) {
         e.preventDefault();
+        $(".sk-circle").css('visibility', 'visible');
         var mkIds = ($(this).attr('id'));
 
         var changeLi = 'liChange';
         ($(".mks li").removeClass(changeLi));
         $(this).addClass(changeLi);
+
+        setTimeout(function (){
+            $(".sk-circle").css('visibility', 'hidden');
+        }, 2000);
+        
 
         $.ajax({
             method: "GET",
