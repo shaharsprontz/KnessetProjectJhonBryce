@@ -13,6 +13,14 @@ function paintMksToDom(data) {
     var currentPos = data.current_position;
     var committees = data.committees;
     var facebook = data.links;
+    
+    function sortDate() {
+        var birthDate = new Date(birth);
+        birth = (birthDate.toLocaleDateString());
+        var startdate = new Date(start);
+        start = (startdate.toLocaleDateString());
+    }
+    sortDate()
 
     for (var i = 0; i < facebook.length; i++) {
         if (facebook[i].url.indexOf("facebook") != -1) {
