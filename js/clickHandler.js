@@ -12,20 +12,29 @@ function clickHandler() {
         ($(".mks li").removeClass(changeLi));
         $(this).addClass(changeLi);
 
-        setTimeout(function (){
-            $(".sk-circle").css('visibility', 'hidden');
-        }, 2000);
+        // setTimeout(function (){
+        //     $(".sk-circle").css('visibility', 'hidden');
+        // }, 2000);
         
 
         $.ajax({
             method: "GET",
             url: "http://oknesset.org/api/v2/member/" + mkIds,
             success: function (data) {
-                paintMksToDom(data)
+                setTimeout(function (){
+                    paintMksToDom(data)
+                },500);
             }
         });
         $('.mks li').click(function () {
             $("#mkData").empty();
         })
     });
+   
+    $(document).ajaxStart(function () {
+        $(".sk-circle").show();
+    }).ajaxStop(function () {
+        $(".sk-circle").hide();
+    });
+
 }

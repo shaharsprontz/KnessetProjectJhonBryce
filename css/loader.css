@@ -1,7 +1,9 @@
 .sk-circle {
     width: 80px;
     height: 80px;
-    position: relative;
+    position: fixed;
+    margin-right: 100px;
+    margin-top: 100px;
     visibility: hidden;
     display: inline-block;
 }
