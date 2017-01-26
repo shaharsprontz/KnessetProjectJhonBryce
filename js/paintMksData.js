@@ -1,8 +1,9 @@
 /**
  * Created by Shahar on 03/01/2017.
  */
-function paintMksToDom(data) {
 
+// Setting all the variables from the data 
+function paintMksToDom(data) {
     var name = data.name;
     var role = data.current_role_descriptions;
     var birth = data.date_of_birth;
@@ -13,15 +14,17 @@ function paintMksToDom(data) {
     var currentPos = data.current_position;
     var committees = data.committees;
     var facebook = data.links;
-    
-    function sortDate() {
+
+    // Sorting the dates to localString
+    function dateToLocal() {
         var birthDate = new Date(birth);
         birth = (birthDate.toLocaleDateString());
         var startdate = new Date(start);
         start = (startdate.toLocaleDateString());
     }
-    sortDate()
+    dateToLocal()
 
+    // Searching for facebook
     for (var i = 0; i < facebook.length; i++) {
         if (facebook[i].url.indexOf("facebook") != -1) {
             var fbAddress = facebook[i].url;
@@ -30,11 +33,13 @@ function paintMksToDom(data) {
             }
         }
     }
+
+    // Getting all committees and trimming un-neccesary Punctuation and strings
     var comitteeData = committees.map(function (arr) {
         return (arr[0] || " ").trim();
     }).join(', ');
 
-    
+    function testIfDataExist() {
         if (data.img_url == null) {
             img = ("מידע חסר");
         }
@@ -45,6 +50,8 @@ function paintMksToDom(data) {
         if (data.current_role_descriptions == null) {
             role = "מידע חסר"
         }
+    }
+    testIfDataExist()
 
     $("#mkData").append($("<img>").attr('src', data.img_url).append(img))
         .append($("<div>").attr('id', 'mkName').append("<span style='font-size: 20px'>שם: </span>" + name))
@@ -64,6 +71,3 @@ function paintMksToDom(data) {
             .append($('<span data-icon="&#xea84;" class="icon-mail2">')));
     }
 }
-
-
-
