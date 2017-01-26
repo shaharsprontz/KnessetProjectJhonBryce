@@ -2,7 +2,14 @@
  * Created by Shahar on 10/01/2017.
  */
 
-// Gettind the ID of the MK and starting the loader
+// Waiting for response from server to stop the loader
+$(document).ajaxStart(function () {
+    $(".sk-circle").show();
+}).ajaxStop(function () {
+    $(".sk-circle").hide();
+});
+
+// Getting the ID of the MK and starting the loader
 function clickHandler() {
     $(".mks li").click(function (e) {
         e.preventDefault();
@@ -19,22 +26,17 @@ function clickHandler() {
             method: "GET",
             url: "http://oknesset.org/api/v2/member/" + mkIds,
             success: function (data) {
-                setTimeout(function (){
+                setTimeout(function () {
                     paintMksToDom(data)
-                },500);
+                }, 500);
             }
         });
+
         // Clearing MK info from DOM on the next li click event
-        $('.mks li').click(function () {
-            $("#mkData").empty();
-        })
+        $(".mks li").click(function () {
+            $('span').not("#starsRating").remove();
+            $('img').remove();
+            $('h4').remove();
+        });
     });
-
-   // Waiting for response from server to stop the loader
-    $(document).ajaxStart(function () {
-        $(".sk-circle").show();
-    }).ajaxStop(function () {
-        $(".sk-circle").hide();
-    });
-
 }

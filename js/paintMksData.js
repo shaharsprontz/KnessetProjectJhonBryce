@@ -51,16 +51,16 @@ function paintMksToDom(data) {
             role = "מידע חסר"
         }
     }
-    testIfDataExist()
+    testIfDataExist();
 
     $("#mkData").append($("<img>").attr('src', data.img_url).append(img))
-        .append($("<div>").attr('id', 'mkName').append("<span style='font-size: 20px'>שם: </span>" + name))
-        .append($("<div>").attr('id', 'role').append("<span style='font-size: 20px'>תפקיד: </span>" + role))
-        .append($("<div>").attr('id', 'birth').append("<span style='font-size: 20px'>תאריך לידה: </span>" + birth))
-        .append($("<div>").attr('id', 'party').append("<span style='font-size: 20px'>מפלגה: </span>" + party))
-        .append($("<div>").attr('id', 'start').append("<span style='font-size: 20px'>תחילת חברות: </span>" + start))
-        .append($("<div>").attr('id', 'position').append("<span style='font-size: 20px'>מיקום במפלגה: </span>" + currentPos))
-        .append($("<div>").attr('id', 'committees').append("<span style='font-size: 20px'>ועדות: </span>" + comitteeData));
+        .append($("<h4>").attr('id', 'mkName').append("<span style='font-size: 20px'>שם: </span>" + name))
+        .append($("<h4>").attr('id', 'role').append("<span style='font-size: 20px'>תפקיד: </span>" + role))
+        .append($("<h4>").attr('id', 'birth').append("<span style='font-size: 20px'>תאריך לידה: </span>" + birth))
+        .append($("<h4>").attr('id', 'party').append("<span style='font-size: 20px'>מפלגה: </span>" + party))
+        .append($("<h4>").attr('id', 'start').append("<span style='font-size: 20px'>תחילת חברות: </span>" + start))
+        .append($("<h4>").attr('id', 'position').append("<span style='font-size: 20px'>מיקום במפלגה: </span>" + currentPos))
+        .append($("<h4>").attr('id', 'committees').append("<span style='font-size: 20px'>ועדות: </span>" + comitteeData));
 
     if (fbAddress != null) {
         $("#mkData").append($("<a>").attr('href', fbAddress).attr("target", "_blank")
