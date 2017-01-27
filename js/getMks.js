@@ -9,6 +9,7 @@ $(document).ready(function () {
         dataType: 'json',
         success: function (mkDetails) {
             paintMks(mkDetails.objects);
+
         }
     });
 });

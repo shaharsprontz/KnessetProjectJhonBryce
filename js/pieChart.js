@@ -27,7 +27,9 @@ function drawChart(dataParty) {
         chartArea: {
             height: '100%',
             width: '100%'
-
+        },
+        legend: {
+            position: 'right'
         },
         backgroundColor: '#fff'
     };
