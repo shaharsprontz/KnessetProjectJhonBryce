@@ -1,10 +1,13 @@
+// Creating the li of the mk's
 function paintMks(mkDetails) {
     for (var i = 0; i < mkDetails.length; i++) {
         $(".mks").append($("<li>").attr("id", mkDetails[i].id).append(mkDetails[i].name).append($('<span id="starsRating">')));
     }
 
+    // Look at clickHandler file
     clickHandler();
-    
+
+    // "Painting the stars rating
     $(".mks li span").each(function (index, item) {
         if (mkDetails[index].average_weekly_presence_hours >= 21 && mkDetails[index].average_weekly_presence_hours <= 25) {
             for (i = 0; i < 5; i++) {

@@ -35,7 +35,7 @@ function clickHandler() {
         // Clearing MK info from DOM on the next li click event
         $(".mks li").click(function () {
             $('span').not("#starsRating").remove();
-            $('img').remove();
+            $('img').slice(1).remove();
             $('h4').remove();
         });
     });

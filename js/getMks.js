@@ -1,7 +1,7 @@
 /**
  * Created by Shahar on 23/12/2016.
  */
-
+// Getting all current mk's
 $(document).ready(function () {
     $.ajax({
         method: "GET",

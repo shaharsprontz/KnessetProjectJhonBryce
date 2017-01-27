@@ -39,6 +39,7 @@ function paintMksToDom(data) {
         return (arr[0] || " ").trim();
     }).join(', ');
 
+    // Testing if there is a missing data
     function testIfDataExist() {
         if (data.img_url == null) {
             img = ("מידע חסר");
@@ -53,6 +54,7 @@ function paintMksToDom(data) {
     }
     testIfDataExist();
 
+    // "Painting" the DOM 
     $("#mkData").append($("<img>").attr('src', data.img_url).append(img))
         .append($("<h4>").attr('id', 'mkName').append("<span style='font-size: 20px'>שם: </span>" + name))
         .append($("<h4>").attr('id', 'role').append("<span style='font-size: 20px'>תפקיד: </span>" + role))
