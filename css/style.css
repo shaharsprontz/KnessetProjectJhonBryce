@@ -11,34 +11,17 @@ html {
 
 body {
     font: 12px/1.4 Helvetica, sans-serif;
-    background-color: #333;
+    background-color: white;
     color: #333;
     height: 100vh;
 }
 
-.group:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
+header {
+    background-color: white;
 }
 
 .group {
-    display: inline-block;
-    clear: both;
     padding-top: 10px;
-}
-
-a:focus {
-    outline: 0;
-}
-
-#page-wrap {
-    width: 100%;
-    background-color:white;
-    height: 100vh;
 }
 
 #main-content {
@@ -48,20 +31,20 @@ a:focus {
 
 #chartTitle {
     font-size: 40px;
-    margin-right: 450px;
-
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 #chartWrap {
     height: 400px;
     width: 600px;
-    margin-right: 200px;
-    margin-top: 100px;
+    margin: 0 auto;
 }
 
 #piechart {
     height: 100%;
     width: 100%;
+    margin-top: 50px;
 }
 
 h1 {
@@ -91,39 +74,42 @@ nav ul li {
 
 nav ul li a {
     display: block;
+
     float: right;
     border-top: 1px solid #96d1f8;
     background: #3e779d;
     background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
-    background: -moz-linear-gradient(top, #65a9d7, #3e779d);
     height: 17px;
     padding: 0 10px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
-    -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 3px;
-    -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+    -webkit-box-shadow: black 0 1px 3px;
+    -moz-box-shadow: black 0 1px 0;
     text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
     -webkit-text-stroke: 1px transparent;
     font: bold 11px/16px "Lucida Grande", "Verdana", sans-serif;
-    color: rgba(255, 255, 255, .85);
+    color: white;
     text-decoration: none;
-    margin: 0 5px 0 0;
+    margin: 0 15px 0 0;
 }
 
 nav ul li a:hover {
     border-top: 1px solid #4789b4;
     background: #28597a;
-    background: -webkit-gradient(linear, left top, left bottom, from(#3d789f), to(#28597a));
     background: -moz-linear-gradient(top, #3d789f, #28597a);
-    color: rgba(255, 255, 255, .85);
+    color: white;
 }
 
-nav ul li a:active, nav ul li a.current {
+nav ul li a:active {
     border-top-color: #245779;
     background: #1b435e;
     position: relative;
     top: 1px;
+}
+
+#mksContainer {
+    display: inline-flex;
 }
 
 #mksContainer ul {
@@ -132,7 +118,6 @@ nav ul li a:active, nav ul li a.current {
     overflow-y: scroll;
     overflow-x: hidden;
     direction: ltr;
-
 }
 
 .mks {
@@ -170,10 +155,10 @@ nav ul li a:active, nav ul li a.current {
 }
 
 #mkData {
-    margin-right: 400px;
-    height: 400px;
-    width: 800px;
-    margin-top: -550px;
+    right: 400px;
+    margin-top: 50px;
+    height: inherit;
+    width: inherit;
     position: absolute;
     font-size: 16px;
 }
@@ -200,10 +185,6 @@ a {
 #committees {
     margin-bottom: 25px;
     width: 450px;
-}
-
-img {
-    margin-right: 60px;
 }
 
 h4 {

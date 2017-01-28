@@ -24,12 +24,14 @@ function drawChart(dataParty) {
         colors: ['#CB4335', '#D7BDE2', '#7D3C98', '#2980B9', '#F9E79F', '#FAD7A0', '#F5CBA7', '#229954', '#85929E', '#34495E'],
         width: '100%',
         height: '100%',
+        is3D: true,
         chartArea: {
             height: '100%',
             width: '100%'
         },
         legend: {
-            position: 'right'
+            position: 'labeled',
+            textStyle: {color: 'black', fontSize: 16}
         },
         backgroundColor: '#fff'
     };
